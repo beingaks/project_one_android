@@ -59,4 +59,5 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose) // If using Hilt
     implementation(libs.accompanist.navigation.animation) // If using animations
+    implementation(libs.androidx.compose.material)
 }
