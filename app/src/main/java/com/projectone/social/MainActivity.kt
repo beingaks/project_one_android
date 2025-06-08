@@ -14,23 +14,25 @@ import com.projectone.social.navigation.NavGraph
 import androidx.navigation.NavHostController
 
 class MainActivity : ComponentActivity() {
+    var isLoggedIn = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
             ProjectOneTheme {
-                  MainScaffold(navController)
+                  MainScaffold(navController, isLoggedIn)
             }
         }
     }
 }
 
 @Composable
-fun MainScaffold (navController: NavHostController) {
+fun MainScaffold (navController: NavHostController, isLoggedIn: Boolean) {
     Scaffold {paddingValues ->
         NavGraph(navHostController = navController,
-            modifier = Modifier.padding(paddingValues))}
+            modifier = Modifier.padding(paddingValues),
+            isLoggedIn = isLoggedIn)}
 }
 
 //@Preview(showBackground = true)
